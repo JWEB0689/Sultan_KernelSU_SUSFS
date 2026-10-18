@@ -252,7 +252,7 @@ jobs:
           zip -r "../$ZIP_NAME" ./*
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: kernel-${{ inputs.codename }}-${{ matrix.variant }}
           path: |
@@ -297,7 +297,7 @@ jobs:
 
       - name: Upload .rej bundle
         if: ${{ always() && steps.collect_rej.outputs.found == 'true' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rej-${{ inputs.codename }}-${{ matrix.variant }}
           path: |
